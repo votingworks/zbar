@@ -372,6 +372,17 @@ int qr_code_data_list_extract_text(const qr_code_data_list *_qrlist,
           /* DONE: This handles a multi-byte sequence split between
              multiple data blocks. */
           case QR_MODE_BYTE:
+            in = (char *)entry->payload.data.buf;
+            out = sa_text + sa_ntext;
+
+            char* hex = "0123456789ABCDEF";
+            int i;
+            for (i = 0; i < entry->payload.data.len; i++) {
+              out[2 * i] = hex[(in[i] >> 4) & 0xF];
+              out[2 * i + 1] = hex[in[i] & 0xF];
+             }
+            sa_ntext += 2 * entry->payload.data.len;
+	    break;
           case QR_MODE_KANJI:{
             // copy byte to bytebuf
             in=(char *)entry->payload.data.buf;
