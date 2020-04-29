@@ -1,0 +1,37 @@
+# build targets
+.libs
+.deps
+.dirstamp
+
+# nodejs
+/nodejs/node_modules
+/nodejs/build
+/nodejs/dist
+
+# build artifacts
+*.cache
+*.class
+*.jar
+*.la
+*.lo
+*.log
+*.o
+*.pc
+*.status
+*~
+/Makefile
+/doc/doxygen.conf
+/gtk/Makefile
+/gtk/zbarmarshal.c
+/gtk/zbarmarshal.h
+/include/config.h
+/include/stamp-h1
+/java/Makefile
+/libtool
+/nodejs/build
+/test/check_dbus.sh
+/test/test_examples.sh
+/zbar/Makefile
+/zbarcam/zbarcam
+/zbarcam/zbarcam-gtk
+/zbarimg/zbarimg
